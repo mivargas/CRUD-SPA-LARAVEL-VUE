@@ -58,13 +58,19 @@ export default {
         name: this.estudiante.name,
         active: this.estudiante.active
       };
-   
       axios
         .put("/api/estudiantes/" + this.id_estudiante, datosform)
         .then(res => {
           console.log(res.data);
           console.log(datosform);
-          this.$router.push({ name:"Estudiante", params: { id: this.id_estudiante, massage:"exito al actualizar registro " + this.id_estudiante, color: "#dba340" } });
+          this.$router.push({
+            name: "Estudiante",
+            params: {
+              id: this.id_estudiante,
+              massage: "exito al actualizar registro " + this.id_estudiante,
+              color: "#dba340"
+            }
+          });
         })
         .catch(err => {
           console.log(err);

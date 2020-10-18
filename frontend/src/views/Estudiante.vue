@@ -47,17 +47,20 @@ export default {
       this.$router.push("/estudiante/" + this.id + "/edit");
     },
     eliminar() {
-      let confirmacion = confirm("Deseas eliminar el registro " + this.id );
+      let confirmacion = confirm("Deseas eliminar el registro " + this.id);
       if (confirmacion) {
         axios
           .delete("/api/estudiantes/" + this.id)
           .then(() => {
-            this.$router.push({name: "Estudiantes", params: { massage: "Eliminado registro " + this.id, color: "red" } });
+            this.$router.push({
+              name: "Estudiantes",
+              params: { massage: "Eliminado registro " + this.id, color: "red" }
+            });
           })
-          .catch( err => {
+          .catch(err => {
             console.log(err);
           });
-      }else{
+      } else {
         return false;
       }
     }

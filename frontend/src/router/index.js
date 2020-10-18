@@ -41,7 +41,7 @@ const routes = [
   {
     path: "/estudiante/create",
     name: "EstudianteCreate",
-    component: EstudianteCreate,
+    component: EstudianteCreate
   }
 ];
 
